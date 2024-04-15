@@ -8,6 +8,8 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import home from './home/home.js'
 import atividades from './atividades/atividade.js';
 import camera from './camera/camera.js';
+import perfil from './perfil/perfil.js';
+import relatorio from './relatorio/relatorio.js';
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -18,6 +20,8 @@ function Tabs() {
       <Tab.Screen name="Início" component={home}/>
       <Tab.Screen name="Tarefas" component={atividades}/>
       <Tab.Screen name="Câmera" component={camera}/>
+      <Tab.Screen name="Relatório" component={relatorio}/>
+      <Tab.Screen name="Perfil" component={perfil}/>
     </Tab.Navigator>
   );
 }
