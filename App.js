@@ -4,6 +4,7 @@ import 'react-native-gesture-handler';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import {Entypo, Feather} from '@expo/vector-icons';
 
 import home from './home/home.js'
 import atividades from './atividades/atividade.js';
@@ -16,12 +17,61 @@ const Tab = createBottomTabNavigator();
 
 function Tabs() {
   return(
-    <Tab.Navigator>
-      <Tab.Screen name="Início" component={home}/>
-      <Tab.Screen name="Tarefas" component={atividades}/>
-      <Tab.Screen name="Câmera" component={camera}/>
-      <Tab.Screen name="Relatório" component={relatorio}/>
-      <Tab.Screen name="Perfil" component={perfil}/>
+    <Tab.Navigator 
+    screenOptions={{
+      tabBarStyle: {
+        backgroundColor: '#91C1EF',
+        borderTopColor: 'transparent',
+        paddingBottom: 5,
+        paddingTop:5,
+      },
+      tabBarActiveTintColor: '#FFF',
+      
+    }}>
+      <Tab.Screen 
+      name="Início" 
+      component={home}
+      options={{
+        tabBarIcon: ({ size, color}) => (
+          <Entypo name="home" size={size} color={color} />
+        )
+      }}
+      />
+      <Tab.Screen 
+      name="Tarefas" 
+      component={atividades}
+      options={{
+        tabBarIcon: ({ size, color}) => (
+          <Feather name="list" size={size} color={color} />
+        )
+      }}
+      />
+      <Tab.Screen 
+      name="Câmera" 
+      component={camera}
+      options={{
+        tabBarIcon: ({ size, color}) => (
+          <Feather name="video" size={size} color={color} />
+        )
+      }}
+      />
+      <Tab.Screen 
+      name="Relatório" 
+      component={relatorio}
+      options={{
+        tabBarIcon: ({ size, color}) => (
+          <Feather name="clipboard" size={size} color={color} />
+        )
+      }}
+      />
+      <Tab.Screen 
+      name="Perfil" 
+      component={perfil}
+      options={{
+        tabBarIcon: ({ size, color}) => (
+          <Feather name="user" size={size} color={color} />
+        )
+      }}/>
     </Tab.Navigator>
   );
 }
