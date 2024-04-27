@@ -11,6 +11,7 @@ import atividades from './atividades/atividade.js';
 import camera from './camera/camera.js';
 import perfil from './perfil/perfil.js';
 import relatorio from './relatorio/relatorio.js';
+import chatbot from './chatbot/chatbot.js';
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -61,6 +62,15 @@ function Tabs() {
       options={{
         tabBarIcon: ({ size, color}) => (
           <Feather name="clipboard" size={size} color={color} />
+        )
+      }}
+      />
+        <Tab.Screen 
+      name="ChatBot" 
+      component={chatbot}
+      options={{
+        tabBarIcon: ({ size, color}) => (
+          <Feather name="message-square" size={size} color={color} />
         )
       }}
       />
